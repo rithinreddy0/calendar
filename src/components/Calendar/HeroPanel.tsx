@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { MonthTheme } from '../data/monthThemes';
+import type { MonthTheme } from '../../data/monthThemes';
 
 interface HeroPanelProps {
   theme: MonthTheme;

@@ -74,8 +74,8 @@ function getDays(y: number, m: number) {
   for (let i = firstDay - 1; i >= 0; i--) cells.push({ date: new Date(y, m - 1, prevDays - i), curr: false });
   for (let d = 1; d <= daysInMonth; d++) cells.push({ date: new Date(y, m, d), curr: true });
   while (cells.length < 42) {
-    const d = cells.length - firstDay - daysInMonth + 1;
-    cells.push({ date: new Date(y, m + 1, d), curr: false });
+    const dayVal = cells.length - firstDay - daysInMonth + 1;
+    cells.push({ date: new Date(y, m + 1, dayVal), curr: false });
   }
   return cells;
 }
@@ -283,7 +283,7 @@ export default function WallCalendar() {
           onClick={() => {
             try {
               dateInputRef.current?.showPicker();
-            } catch (e) {
+            } catch {
               dateInputRef.current?.focus();
             }
           }}
@@ -340,7 +340,7 @@ export default function WallCalendar() {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
-                onDragEnd={(e, { offset }) => {
+                onDragEnd={(_, { offset }) => {
                   const swipe = offset.x;
                   if (swipe < -50) chgMonth(1);
                   else if (swipe > 50) chgMonth(-1);
@@ -421,7 +421,7 @@ export default function WallCalendar() {
                     {DAY_NAMES.map((d, i) => <div key={i} className="wc-dh">{d}</div>)}
                   </div>
                   <div className="wc-grid" onMouseLeave={() => setHoverDate(null)}>
-                    {cells.map((c, i) => {
+                    {cells.map((c) => {
                       const isHover = hoverDate?.getTime() === c.date.getTime();
                       const state = getRangeState(c.date);
                       const isToday = sameDay(c.date, new Date());
