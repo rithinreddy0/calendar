@@ -10,13 +10,7 @@ This project showcases **real-world frontend skills**, including custom hooks, m
 
 🔗 https://calendar-eta-rosy.vercel.app/
 
----
-
-## 📸 Preview
-
-> Add GIF or screenshots here (very important for recruiters)
-
----
+--- 
 
 ## ✨ Features
 
@@ -123,3 +117,35 @@ calendar/
 ├── vite.config.ts
 ├── tsconfig.json
 └── netlify.toml
+## ⚡ Getting Started
+
+<details>
+<summary>🚀 Click to expand setup instructions</summary>
+
+<br/>
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rithinreddy0/calendar.git
+cd calendar
+2. Install dependencies
+Bash
+npm install
+3. Run the development server
+Bash
+npm run dev
+4. Open in browser
+
+http://localhost:5173/
+5. Build for production
+Bash
+npm run build
+6. Preview production build
+Bash
+npm run preview
+�
+
+📦 Requirements
+Node.js >= 16
+npm / yarn
