@@ -1,75 +1,125 @@
-# React + TypeScript + Vite
+# 🗓️ Wall Calendar — Interactive Premium UI Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **modern, highly interactive Wall Calendar Web App** built using **React + TypeScript + Vite**, designed with a focus on **smooth UX, clean architecture, and scalable frontend engineering**.
 
-Currently, two official plugins are available:
+This project showcases **real-world frontend skills**, including custom hooks, modular architecture, and state management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Demo
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+🔗 https://calendar-eta-rosy.vercel.app/
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 📸 Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> Add GIF or screenshots here (very important for recruiters)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📅 Calendar System
+- Dynamic monthly calendar rendering  
+- Accurate date calculations  
+- Month navigation (previous / next)  
+- Today highlighting  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🎯 Date Range Selection
+- Select start and end dates  
+- Smooth range highlighting  
+- Clean interaction handling  
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 📝 Notes System
+- Add notes to selected dates  
+- Persistent storage using `localStorage`  
+- Global state management  
+
+---
+
+### 🎨 UI & Experience
+- Clean and minimal design  
+- Responsive layout  
+- Smooth interactions  
+- Component-based structure  
+
+---
+
+### 🧠 Custom Hooks (Core Strength)
+
+- `useCalendar` → Calendar logic  
+- `useDateRange` → Date range handling  
+- `useNotes` → Notes management  
+
+---
+
+### 🗂️ State Management
+
+- Centralized store  
+- `notesSlice` for notes handling  
+
+---
+
+### 📊 Data Layer
+
+- `holidays.ts` → Holiday data  
+- `monthThemes.ts` → Theme configuration  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + TypeScript  
+- **Build Tool:** Vite  
+- **Styling:** CSS  
+- **State:** Custom store  
+- **Persistence:** localStorage  
+
+---
+
+## 📂 Project Structure
+
+```bash
+calendar/
+│
+├── public/
+│
+├── src/
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│
+│   ├── components/
+│   │   ├── Calendar/
+│   │   ├── WallCalendar.tsx
+│   │   └── WallCalendar.css
+│
+│   ├── data/
+│   │   ├── holidays.ts
+│   │   └── monthThemes.ts
+│
+│   ├── hooks/
+│   │   ├── useCalendar.ts
+│   │   ├── useDateRange.ts
+│   │   └── useNotes.ts
+│
+│   ├── store/
+│   │   ├── index.ts
+│   │   └── notesSlice.ts
+│
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── App.css
+│   └── index.css
+│
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+└── netlify.toml
