@@ -74,7 +74,7 @@ function getDays(y: number, m: number) {
   for (let i = firstDay - 1; i >= 0; i--) cells.push({ date: new Date(y, m - 1, prevDays - i), curr: false });
   for (let d = 1; d <= daysInMonth; d++) cells.push({ date: new Date(y, m, d), curr: true });
   while (cells.length < 42) {
-    const dayVal = cells.length - firstDay - daysInMonth + 1;
+    const dayVal: number = cells.length - firstDay - daysInMonth + 1;
     cells.push({ date: new Date(y, m + 1, dayVal), curr: false });
   }
   return cells;
